@@ -16,12 +16,25 @@
             <li><a href='#pws'>Public Water System</a></li>
         </ul>
         <div id='ground'>
-            <input type="text" onFocus="" id="ground-autocomplete" placeholder="Enter address to find groundwater quality">
-            <p id='results-header'></p>
-            <div id='results'></div>
-            <button id='submit'>Find Quality</button>
+            <p>
+                <button id='ground-locate'>Automatically locate</button>
+                or:
+                <input type="text" onFocus="" id="ground-autocomplete" placeholder="Enter address">
+            </p>
+            <p id='ground-results-header'></p>
+            <div id='ground-results'></div>
+            <button id='ground-submit'>Find Quality</button>
         </div>
-        <div id='pws'></div>
+        <div id='pws'>
+            <p>
+                <button id='pws-locate'>Automatically locate</button>
+                <!-- or:
+                <input type="text" onFocus="" id="pws-autocomplete" placeholder="Enter zipcode"> -->
+            </p>
+            <p id='pws-results-header'></p>
+            <div id='pws-results'></div>
+            <!-- <button id='pws-submit'>Find Quality</button> -->
+        </div>
     </div>
     <script type="text/javascript" src="localrisk.js"></script>
 </body>
