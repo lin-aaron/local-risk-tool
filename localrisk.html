@@ -3,9 +3,10 @@
 <head>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVtnS6X8Fk_BD0Nr_KGGDcfYoYT3b6718&libraries=places"></script>
 </head>
 
 <body>
@@ -14,8 +15,11 @@
             <li><a href='#ground'>Groundwater</a></li>
             <li><a href='#pws'>Public Water System</a></li>
         </ul>
-        <div id='ground'>	
-    		<button id='submit'>Try clicking dis with lat: 18.220833, lon : -66.590149</button>
+        <div id='ground'>
+            <input type="text" onFocus="" id="ground-autocomplete" placeholder="Enter address to find groundwater quality">
+            <p id='results-header'></p>
+            <div id='results'></div>
+            <button id='submit'>Find Quality</button>
         </div>
         <div id='pws'></div>
     </div>
