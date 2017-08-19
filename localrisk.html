@@ -2,39 +2,49 @@
 
 <head>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="localrisk.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVtnS6X8Fk_BD0Nr_KGGDcfYoYT3b6718&libraries=places"></script>
 </head>
 
 <body>
     <div id='local-risk-container'>
-        <ul>
-            <li><a href='#ground'>Groundwater</a></li>
-            <li><a href='#pws'>Public Water System</a></li>
-        </ul>
-        <div id='ground'>
-            <p>
-                <button id='ground-locate'>Automatically locate</button>
-                or:
-                <input type="text" onFocus="" id="ground-autocomplete" placeholder="Enter address">
-            </p>
-            <p id='ground-results-header'></p>
-            <div id='ground-results'></div>
-            <button id='ground-submit'>Find Quality</button>
+        <div id='location' class='hidden'>
+            <h1>Check Nearby Water Quality Results for Free!</h1>
+            <!-- <h2>Enter Your Location</h2> -->
+            <input type="text" onFocus="" id="autocomplete" placeholder=" Enter your location">
+            <a href="#" id='submit-location' class="button">GET RESULTS</a>
         </div>
-        <div id='pws'>
-            <p>
-                <button id='pws-locate'>Automatically locate</button>
-                <!-- or:
-                <input type="text" onFocus="" id="pws-autocomplete" placeholder="Enter zipcode"> -->
-            </p>
-            <p id='pws-results-header'></p>
+        <div id='source' class='hidden'>
+            <h2>Choose your water source:</h2>
+            <div id='source-selectors'>
+                <div id='well-water' class='sourceChoice' onclick="getWellResults()">
+                	<img src="">
+                    <p>Well Water</p>
+                </div>
+                <div id='water-utility' class='sourceChoice' onclick="findCounty()">
+                    <img src="">
+                    <p>Water Utility</p>
+                </div>
+            </div>
+        </div>
+        <div id='ground' class='hidden'>
+            <h2 id='ground-results-header'></h2>
+            <div id='ground-results'>
+            	<div id='high-risk' class='result'></div>
+            	<div id='other-risk'>
+            		<div id='medium-risk' class='result'></div>
+            		<div id='nonDetect' class='result'></div>
+            	</div>
+            	<div id='untested' class='result'></div>
+            </div>
+			<a href="https://mytapscore.com/collections/water-testing-packages" class="button">TEST MY WATER</a>
+        </div>
+        <div id='pws' class='hidden'>
+            <h2 id='pws-results-header'></h2>
             <div id='pws-results'></div>
-            <!-- <button id='pws-submit'>Find Quality</button> -->
         </div>
+        <p id='restart' class='hidden'>Start Over</p>
     </div>
     <script type="text/javascript" src="localrisk.js"></script>
 </body>

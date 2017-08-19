@@ -52,8 +52,7 @@ function newPage(current, next, restart) {
 }
 
 $('#submit-location').on('click', function() {
-    getWellResults();
-    newPage('location', 'ground', true);
+    newPage('location', 'source', true);
 })
 
 function getWellResults() {
